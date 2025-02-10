@@ -1,5 +1,10 @@
 import pygame as pygame
 
+pygame.init()
+
+WIDTH, HEIGHT = 800,600
+screen = pygame.display.set_mode((WIDTH,HEIGHT))
+pygame.display.set_caption("Pokemon Simulation"))
 Frames = 60
 Clock =
 
@@ -16,15 +21,22 @@ Pokedex = {
 }
 
 class Pokemon:
-    def stats(self, health, attack, sp_attack, defense, sp_defense, accuracy):
+    def stats(self, health, attack, sp_attack, defense, sp_defense, speed):
         self.health = health
         self.attack = attack
         self.sp_attack = sp_attack
         self.defense = defense
         self.sp_defense = sp_defense
-        self.accuracy = accuracy
+        self.speed = speed
 
 class Player:
     def
 
-pygame.
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    pygame.display.update()
+
+pygame.quit()
