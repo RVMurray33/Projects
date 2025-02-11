@@ -21,13 +21,31 @@ Pokedex = {
 }
 
 class Pokemon:
-    def stats(self, health, attack, sp_attack, defense, sp_defense, speed):
-        self.health = health
+    def __init__(self, name, level, hp, attack, defense, speed, moves):
+        self.name = name
+        self.level = level
+        self.max_hp = hp
+        self.hp = hp
         self.attack = attack
-        self.sp_attack = sp_attack
         self.defense = defense
-        self.sp_defense = sp_defense
         self.speed = speed
+        self.moves = moves  # List of Move objects
+
+    def take_damage(self, damage):
+        self.hp -= damage
+        if self.hp < 0:
+            self.hp = 0
+
+    def is_fainted(self):
+        return self.hp <= 0
+
+    def attack_opponent(self, move, opponent):
+        damage = max(1, move.power + self.attack - opponent.defense)
+        opponent.take_damage(damage)
+        return damage
+
+    def get_move(self):
+        return random.choice(self.moves)
 
 class Player:
     def
