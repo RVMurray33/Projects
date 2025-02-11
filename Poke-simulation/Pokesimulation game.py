@@ -47,6 +47,20 @@ class Pokemon:
     def get_move(self):
         return random.choice(self.moves)
 
+    def battle_ui(pokemon1, pokemon2):
+        screen.fill(255,255,255)
+        screen.blit(pokemon1.image, (50,250))
+        screen.blit(pokemon2.image, (500,50))
+
+        draw_hp_bar(pokemon1, 50, 350)
+        draw_hp_bar(pokemon2, 500, 150)
+
+        pygame.display.update()
+
+    def draw_hp_bar(pokemon, x, y):
+        ratio = pokemon.hp/pokemon.max_hp
+        pygame.draw.rect(screen,)
+        
 class Player:
     def
 
