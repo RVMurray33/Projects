@@ -9,4 +9,14 @@ def get_pokemon(name: str):
     requests = requests.get(url)
 
     if response.status_code != 200:
-        return {error}
+        return {"error": "Pokémon not found"}
+
+    data = response.json()
+        return {
+            "name" : data["name"],
+            "id" : data["id"],
+            "hp" : data["hp"],
+            "attack" : data["attack"],
+            "defense" : data["defense"],
+            "sprite" : data["sprite"]
+        }
