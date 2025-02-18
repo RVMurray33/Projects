@@ -26,9 +26,6 @@ class Pokemon:
     def fainted(self):
         return self.hp <= 0
 
-    def choose_move(self):
-        return random.choice(self.moves)
-
 def get_pokemon(name: str):
     url = f"https:pokeapi.co/api/v2/pokemon/{name.lower()}"
     response = requests.get(url)
@@ -37,6 +34,26 @@ def get_pokemon(name: str):
         return {"error": "Pokémon not found"}
 
     data = response.json()
+
+    stats = {stat["stat"]["name"]: stat["base_stat"] for stat in data ["stats"]}
+
+    moves = {}
+    for move in data["moves"][:4]:
+        move_name = move["move"]["name"]
+        move_url = move["move"]["url"]
+        move_data = requests.get(move_url).json()
+        move_power = move_data.get("power", 40)
+        moves[move_name] = move_power
+
+    return {
+        "hp": stats["hp"],
+        "attack": stats["attack"],
+        "defense": stats["defense"],
+        "speed": stats["speed"],
+        "moves": moves,
+        "type": data["types"][0]["type"]["name"],
+        "sprite": data["sprites"]["front_default"]
+    }
 
 @app.get("/pokemon/{name}")
 def get_pokemon_api(name: str):
