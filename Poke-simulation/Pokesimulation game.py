@@ -69,4 +69,5 @@ def battle(player_pokemon: str, opponent_pokemon: str):
     p2_data = get_pokemon(opponent_pokemon)
 
 @app.post("/attack/")
-def select_move(self, pokemon_data):
+def select_move(self, player_pokemon):
+    pokemon_data = get_pokemon(player_pokemon)
