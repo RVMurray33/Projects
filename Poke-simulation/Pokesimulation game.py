@@ -76,4 +76,6 @@ def battle(player_pokemon: str, opponent_pokemon: str):
 
 @app.post("/battle/{battle_id}/attack")
 def select_move(self, player_pokemon):
-    pokemon_data = get_pokemon(player_pokemon)
+    pokemon_data = get_pokemon(player_party)
+    if pokemon in player_party == [0]
+        moves
