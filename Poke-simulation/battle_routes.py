@@ -11,10 +11,15 @@ def start_battle(player_pokemon: str, opponent_pokemon: str):
   opponent_data = get_pokemon(opponent_pokemon)
 
   battle_id = random.randint(1000,9999)
+def get_speed(player_data, opponent_data)
+  if player_data["stats"]["speed"] > opponent_data["stats"]["speed"]:
+    turn = player_data
+  else:
+    turn = opponent_data
   active_battles[battle_id] = {
     "player": player_data,
     "oppponent": opponent_data,
-    "turn": "player"
+    "turn": turn
   }
 
   return {"battle_id": battle_id, "message": "Battle started!"}
