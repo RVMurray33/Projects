@@ -8,7 +8,7 @@ app = FastAPI()
 active_battle = None
 
 class Pokemon:
-    def __init__(self, name, hp, attack, defense, speed, moves, type):
+    def __init__(self, name, hp, attack, defense, speed, moves, type, level, exp):
         self.name = name
         self.max_hp = hp
         self.hp = hp
@@ -17,7 +17,15 @@ class Pokemon:
         self.speed = speed
         self.moves = moves
         self.type = type
+        self.exp = 0
+        self.level = level
+
+    def gain_exp(self, exp):
     
+    def level_up(self, exp):
+
+    def learn_moves(self, exp):
+        
     def take_damage(self, damage):
         self.hp -= damage
         if self.hp < 0:
@@ -55,11 +63,14 @@ def get_pokemon(name: str):
         "sprite": data["sprites"]["front_default"]
     }
 
+player_party = {}
+
 @app.post("/pokemon/choose_start/")
-def choose_starter(player_party):
+def choose_starter(pokemon_name: str):
     starter_pokemon = [Bulbasaur, Charmander, Squirtle, Pikachu, Evee, Chikirita, Totdile, Cyndaquil, Torchic, Mudkip, Treecko, Piplup, Turtwig, Chimchar, Snivy, Oshawott, Tepig, Froakie, Chespin, Fennekin, Rowlet, Poppolio, Litten, Grookey, Sobble, Scorbunny, Sprigatito, Quaxly, Fuecoco]
-    if player chooses starter:
-        player.append(starter)
+    for pokemon in starter_pokemon:
+        get_pokemon(pokemon)
+        
     
 @app.get("/pokemon/{name}")
 def get_pokemon_api(name: str):
@@ -77,5 +88,5 @@ def battle(player_pokemon: str, opponent_pokemon: str):
 @app.post("/battle/{battle_id}/attack")
 def select_move(self, player_pokemon):
     pokemon_data = get_pokemon(player_party)
-    if pokemon in player_party == [0]
-        moves
+    if pokemon in player_party == party_leader
+        moves[party_leader]
