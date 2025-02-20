@@ -55,6 +55,12 @@ def get_pokemon(name: str):
         "sprite": data["sprites"]["front_default"]
     }
 
+@app.post("/pokemon/choose_start/")
+def choose_starter(player_party):
+    starter_pokemon = [Bulbasaur, Charmander, Squirtle, Pikachu, Evee, Chikirita, Totdile, Cyndaquil, Torchic, Mudkip, Treecko, Piplup, Turtwig, Chimchar, Snivy, Oshawott, Tepig, Froakie, Chespin, Fennekin, Rowlet, Poppolio, Litten, Grookey, Sobble, Scorbunny, Sprigatito, Quaxly, Fuecoco]
+    if player chooses starter:
+        player.append(starter)
+    
 @app.get("/pokemon/{name}")
 def get_pokemon_api(name: str):
     pkmn_data = get_pokemon(name)
@@ -68,6 +74,6 @@ def battle(player_pokemon: str, opponent_pokemon: str):
     p1_data = get_pokemon(player_pokemon)
     p2_data = get_pokemon(opponent_pokemon)
 
-@app.post("/attack/")
+@app.post("/battle/{battle_id}/attack")
 def select_move(self, player_pokemon):
     pokemon_data = get_pokemon(player_pokemon)
