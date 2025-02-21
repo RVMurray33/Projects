@@ -16,6 +16,7 @@ def get_speed(player_data, opponent_data)
     turn = player_data
   else:
     turn = opponent_data
+  return turn
   active_battles[battle_id] = {
     "player": player_data,
     "oppponent": opponent_data,
