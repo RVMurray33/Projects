@@ -69,7 +69,9 @@ player_party = {}
 def choose_starter(pokemon_name: str):
     starter_pokemon = [Bulbasaur, Charmander, Squirtle, Pikachu, Evee, Chikirita, Totdile, Cyndaquil, Torchic, Mudkip, Treecko, Piplup, Turtwig, Chimchar, Snivy, Oshawott, Tepig, Froakie, Chespin, Fennekin, Rowlet, Poppolio, Litten, Grookey, Sobble, Scorbunny, Sprigatito, Quaxly, Fuecoco]
     for pokemon in starter_pokemon:
-        get_pokemon(pokemon)
+        starter = get_pokemon(pokemon)
+        if player chooses pokemon:
+            player_party[pokemon] = starter
         
     
 @app.get("/pokemon/{name}")
