@@ -22,10 +22,11 @@ class Pokemon:
 
     def gain_exp(self, exp):
         if opponent_pokemon == fainted:
-            return player_pokemon.exp += opponent_pokemon.exp
+            player_pokemon.exp += opponent_pokemon.exp
+            return player_pokemon.exp
     def level_up(self, exp):
         if pokemon.exp > level_exp_cap:
-            return pokemon.level += 1
+            return pokemon.level += 1 and lvl_exp_cap = lvl_exp_cap *1.05
 
     def learn_moves(self, exp):
         if self.level == move_level:
