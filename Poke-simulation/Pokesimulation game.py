@@ -104,4 +104,6 @@ def select_move(self, player_pokemon):
         moves[party_leader]
         
 @app.post("/battle_finished")
-def end_battle(
+def end_battle(self, player_pokemon):
+    pokemon_data = get_pokemon(player_pokemon)
+    
