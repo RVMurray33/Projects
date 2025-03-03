@@ -106,4 +106,8 @@ def select_move(self, player_pokemon):
 @app.post("/battle_finished")
 def end_battle(self, player_pokemon):
     pokemon_data = get_pokemon(player_pokemon)
+
+@app.get("/wild_encounter")
+def encounter(self, wild_pokemon):
+    pokemon_data = get_pokemon(wild_pokemon)
     
