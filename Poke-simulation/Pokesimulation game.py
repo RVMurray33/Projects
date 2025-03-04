@@ -69,10 +69,11 @@ def get_pokemon(name: str):
         "sprite": data["sprites"]["front_default"]
     }
 class Player:
-    def __init__(self, x, y, player_party):
+    def __init__(self, x, y, player_party, inventory):
         self.x = x_pos
         self.y = y_pos
         self.player_party = []
+        self.inventory = []
 
 @app.post("/pokemon/choose_start/")
 def choose_starter(pokemon_name: str):
