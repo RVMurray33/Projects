@@ -102,7 +102,8 @@ def battle(player_pokemon: str, opponent_pokemon: str):
 def select_move(self, player_pokemon):
     pokemon_data = get_pokemon(player_party)
     if pokemon in player_party == party_leader
-        moves[party_leader]
+        return moves[party_leader]
+    
         
 @app.post("/battle_finished")
 def end_battle(self, player_pokemon):
