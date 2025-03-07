@@ -28,7 +28,11 @@ def get_speed(player_data, opponent_data)
     player_data = get_pokemon(player_pokemon)
     opponent_data = get_pokemon(opponent_pokemon)
 
-  if len(opponent.party) = 0
-  active_battle = 0
+    if len(opponent.party) = 0
+    active_battle = 0
 
-  return {"battle_id": battle_id, "message": "Battle started!"}
+    return {"battle_id": battle_id, "message": "Battle started!"}
+
+@router.post("/battle/attack")
+def attack(player_pokemon: str, opponent_pokemon: str):
+  player_data =
