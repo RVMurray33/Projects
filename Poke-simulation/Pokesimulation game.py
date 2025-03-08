@@ -112,4 +112,5 @@ def end_battle(self, player_pokemon):
 @app.get("/wild_encounter")
 def encounter(self, wild_pokemon):
     pokemon_data = get_pokemon(wild_pokemon)
+    active_battle
     
