@@ -36,3 +36,7 @@ def get_speed(player_data, opponent_data)
 @router.post("/battle/attack")
 def attack(player_pokemon: str, opponent_pokemon: str):
   player_data =
+
+@router.post("/battle/items")
+def use_item(player_inventory):
+  if player 
