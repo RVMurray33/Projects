@@ -113,4 +113,6 @@ def end_battle(self, player_pokemon):
 def encounter(self, wild_pokemon):
     pokemon_data = get_pokemon(wild_pokemon)
     active_battle
-    
+
+def catch_pokemon(self, wild_pokemon):
+    if player
