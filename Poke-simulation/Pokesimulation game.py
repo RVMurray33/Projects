@@ -115,4 +115,5 @@ def encounter(self, wild_pokemon):
     active_battle
 
 def catch_pokemon(self, wild_pokemon):
-    if player
+    if pokeball in player.inventory:
+        player.party.append(wild_pokemon)
