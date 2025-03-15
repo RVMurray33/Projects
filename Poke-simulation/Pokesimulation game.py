@@ -118,3 +118,6 @@ def catch_pokemon(self, wild_pokemon):
     pokemon_data = get_pokemon(wild_pokemon)
     if pokeball in player.inventory:
         player.party.append(pokemon_data)
+
+    if player_party > 6:
+        player_pc.append(pokemon_data)
