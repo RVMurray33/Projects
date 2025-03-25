@@ -122,3 +122,6 @@ def catch_pokemon(self, wild_pokemon):
 
     if len(player_party) > 6:
         player_pc.append(pokemon_data)
+
+def give_item(self, player_party):
+    
