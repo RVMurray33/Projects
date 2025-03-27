@@ -124,4 +124,5 @@ def catch_pokemon(self, wild_pokemon):
         player_pc.append(pokemon_data)
 
 def give_item(self, player_party):
+    if item in player_inventory
     
